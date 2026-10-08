@@ -4,6 +4,12 @@ A minimal, responsive academic website for GitHub Pages. It uses plain HTML, CSS
 
 The abstract paper-and-pastel background is stored locally at `assets/philosophy-background.webp`.
 
+## Search indexing
+
+The page includes canonical, robots, Open Graph, Twitter Card, and Schema.org `ProfilePage` metadata. Submit `https://yangyonghua19.github.io/Flora/sitemap.xml` in Google Search Console after deployment.
+
+For Google Search Console ownership verification, add the verification `<meta>` element supplied by Google inside the document `<head>`, deploy it, and then click **Verify** in Search Console.
+
 ## Portrait
 
 The About portrait is stored locally at `assets/picture.png`.
