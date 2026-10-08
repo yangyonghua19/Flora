@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Yonghua Yang (Flora) — philosophy student at Peking University." />
+    <title>Yonghua Yang (Flora)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="name" href="#about" aria-label="Yonghua Yang — back to About">Yonghua Yang</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#talks">Talks</a>
+          <a href="#ta">TA</a>
+          <a class="cv-link" href="#" aria-disabled="true" data-tooltip="PDF coming soon">CV</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="sun" aria-hidden="true">☼</span><span class="moon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="section-number">01 / About</p>
+          <h1 id="about-title">Yonghua Yang <span>(Flora)</span></h1>
+          <p class="education-line">Shenzhen University, B.A. <span>2022–2026</span><br />Peking University, graduate student <span>2026–present</span></p>
+          <p>I am mainly interested in the philosophy of artificial intelligence, philosophy of mind in the analytic tradition, philosophy of cognitive science, and modal metaphysics.</p>
+          <p>Outside philosophy, I enjoy working out.</p>
+        </div>
+        <figure class="portrait">
+          <span class="portrait-line" aria-hidden="true"></span>
+          <span class="portrait-tape tape-top" aria-hidden="true"></span>
+          <span class="portrait-tape tape-bottom" aria-hidden="true"></span>
+          <img src="assets/picture.png" alt="Portrait of Yonghua Yang in a sunflower field" />
+        </figure>
+      </section>
+
+      <section class="section ruled-section" id="talks" aria-labelledby="talks-title">
+        <div class="section-heading">
+          <p class="section-number">02 / Selected</p>
+          <h2 id="talks-title"><a href="#talks">Talks</a></h2>
+        </div>
+        <article class="talk" tabindex="0">
+          <div class="talk-date"><span>2026</span><small>Porto</small></div>
+          <div class="talk-copy">
+            <h3>“Connectionism and Classicalism: A Dispute over Representational Architecture”</h3>
+            <p>The 6th International Conference on Philosophy of Mind (6ICPH), University of Porto, Portugal</p>
+            <p class="talk-note">Conference presentation</p>
+          </div>
+        </article>
+        <article class="talk" tabindex="0">
+          <div class="talk-date"><span>2026</span><small>China</small></div>
+          <div class="talk-copy">
+            <h3>“A Non-Classical Account of the Systematicity Problem: In Defense of Connectionist Representational Architecture”</h3>
+            <p>The Third Philosophy “101 Plan” Academic Forum for Outstanding Students</p>
+            <p class="talk-note">Outstanding Paper Award</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section ruled-section" id="ta" aria-labelledby="ta-title">
+        <div class="section-heading">
+          <p class="section-number">03 / Teaching</p>
+          <h2 id="ta-title"><a href="#ta">TA</a></h2>
+        </div>
+        <div class="teaching-list">
+          <article tabindex="0">
+            <time datetime="2024-09">Sep. 2024 – Jul. 2025</time>
+            <div><h3>English Listening and Speaking</h3><p>College English Division, School of Foreign Languages, Shenzhen University</p></div>
+          </article>
+          <article tabindex="0">
+            <time datetime="2026-09">Sep. 2026 – present</time>
+            <div><h3>Introduction to Philosophy — Discussion Sections</h3><p>Department of Philosophy, Peking University</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cv-section" id="cv" aria-labelledby="cv-title">
+        <p class="section-number">04 / Curriculum Vitae</p>
+        <h2 id="cv-title">CV</h2>
+        <p>PDF version coming soon.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Yonghua Yang (Flora)</p><p>Philosophy · Peking University</p><p>© <span id="year"></span></p>
+    </footer>
+  </body>
+</html>
