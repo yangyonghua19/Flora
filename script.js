@@ -3,7 +3,9 @@ const themeButton = document.querySelector('.theme-toggle');
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]:not([aria-disabled="true"])')];
 const header = document.querySelector('.site-header');
+const progressBar = document.querySelector('.reading-progress span');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 const storedTheme = localStorage.getItem('theme');
 const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -12,7 +14,7 @@ function setTheme(theme) {
   root.dataset.theme = theme;
   themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
   themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-  themeColor.setAttribute('content', theme === 'dark' ? '#181817' : '#ffffff');
+  themeColor.setAttribute('content', theme === 'dark' ? '#171613' : '#fdfcf9');
 }
 
 setTheme(storedTheme || preferredTheme);
@@ -28,6 +30,9 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 
 function updateHeader() {
   header.classList.toggle('is-scrolled', window.scrollY > 24);
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? Math.min(window.scrollY / scrollableHeight, 1) : 0;
+  progressBar.style.setProperty('--read-progress', progress);
   if (!reducedMotion) {
     root.style.setProperty('--art-shift', `${Math.min(window.scrollY * 0.015, 14)}px`);
   }
@@ -35,6 +40,16 @@ function updateHeader() {
 
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
+
+if (finePointer && !reducedMotion) {
+  document.querySelectorAll('.talk, .teaching-list article').forEach((item) => {
+    item.addEventListener('pointermove', (event) => {
+      const bounds = item.getBoundingClientRect();
+      item.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
+      item.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
+    }, { passive: true });
+  });
+}
 
 const revealItems = [
   document.querySelector('.about-copy'),
